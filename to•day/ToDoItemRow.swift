@@ -35,8 +35,8 @@ extension String {
     }
 }
 
-struct ToDoItemRow_Previews: PreviewProvider {    
-    static var previews: some View {
-        ToDoItemRow(item: getItem())
-    }
-}
+//struct ToDoItemRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ToDoItemRow()
+//    }
+//}
