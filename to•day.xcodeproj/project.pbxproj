@@ -15,7 +15,6 @@
 		F024D36E2535C64400DE31C0 /* to_day.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F024D36C2535C64400DE31C0 /* to_day.xcdatamodeld */; };
 		F024D37B2535C8B500DE31C0 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024D37A2535C8B500DE31C0 /* DayView.swift */; };
 		F024D37F2535CA0200DE31C0 /* ToDoItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024D37E2535CA0200DE31C0 /* ToDoItemRow.swift */; };
-		F024D3832535CAF200DE31C0 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024D3822535CAF200DE31C0 /* PreviewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		F024D36F2535C64400DE31C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F024D37A2535C8B500DE31C0 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		F024D37E2535CA0200DE31C0 /* ToDoItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemRow.swift; sourceTree = "<group>"; };
-		F024D3822535CAF200DE31C0 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +69,6 @@
 				F024D36F2535C64400DE31C0 /* Info.plist */,
 				F024D36C2535C64400DE31C0 /* to_day.xcdatamodeld */,
 				F024D3672535C64400DE31C0 /* Preview Content */,
-				F024D3822535CAF200DE31C0 /* PreviewData.swift */,
 			);
 			path = "to•day";
 			sourceTree = "<group>";
@@ -157,7 +154,6 @@
 				F024D37F2535CA0200DE31C0 /* ToDoItemRow.swift in Sources */,
 				F024D37B2535C8B500DE31C0 /* DayView.swift in Sources */,
 				F024D3642535C64200DE31C0 /* ContentView.swift in Sources */,
-				F024D3832535CAF200DE31C0 /* PreviewData.swift in Sources */,
 				F024D3622535C64200DE31C0 /* to_dayApp.swift in Sources */,
 				F024D36E2535C64400DE31C0 /* to_day.xcdatamodeld in Sources */,
 			);
