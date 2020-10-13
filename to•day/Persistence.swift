@@ -13,12 +13,12 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<5 {
+        for pos in 0..<5 {
             let newItem = ToDoItem(context: viewContext)
             newItem.id = UUID()
             newItem.date = Date()
-            newItem.name = "Do dishes"
-            newItem.position = 0
+            newItem.name = "Conference call with entire team"
+            newItem.position = Int16(pos)
             newItem.icon = "📞"
         }
         do {

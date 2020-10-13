@@ -1,6 +1,6 @@
 //
 //  DayView.swift
-//  to-day
+//  to∙day
 //
 //  Created by Garrison Blair on 2020-10-05.
 //
@@ -17,8 +17,8 @@ struct DayView: View {
     init(date: Date) {
         self.date = date
         
+        // range for date predicate
         let startDate = NSCalendar.current.startOfDay(for: date)
-        // get the start of the day after the selected date
         let endDate = NSCalendar.current.date(byAdding: .day, value: 1, to: NSCalendar.current.startOfDay(for: date))
         
         let predicate = NSPredicate(format: "date >= %@ AND date < %@", startDate as CVarArg, endDate! as CVarArg)
@@ -33,7 +33,8 @@ struct DayView: View {
     var body: some View {
         VStack {
             ForEach(items) { (item: ToDoItem) in
-                Text(item.name!)
+//                Text("\(items.count)")
+                ToDoItemRow(item: item)
             }
         }
     }

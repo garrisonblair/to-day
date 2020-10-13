@@ -18,6 +18,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Button(action: {
+                addItem(name: "Conference call with entire team", position: 0)
+            }, label: {
+                Text("Add")
+            })
             Text("Today")
             DayView(date: Date())
         }
@@ -28,6 +33,7 @@ struct ContentView: View {
             let newItem = ToDoItem(context: viewContext)
             newItem.id = UUID()
             newItem.name = name
+            newItem.icon = "📞"
             newItem.position = position
             newItem.date = date
 
