@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  to•day
+//  to-day
 //
-//  Created by Garrison Blair on 2020-10-13.
+//  Created by Garrison Blair on 2020-10-05.
 //
 
 import SwiftUI
@@ -10,34 +10,26 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \ToDoItem.date, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<ToDoItem>
 
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-            }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
+        VStack {
+            Text("Today")
+            DayView(date: Date())
         }
     }
 
-    private func addItem() {
+    private func addItem(name: String, position: Int16, date: Date = Date()) {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = ToDoItem(context: viewContext)
+            newItem.id = UUID()
+            newItem.name = name
+            newItem.position = position
+            newItem.date = date
 
             do {
                 try viewContext.save()
@@ -50,20 +42,20 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 }
 
 private let itemFormatter: DateFormatter = {

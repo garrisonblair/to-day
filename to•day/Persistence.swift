@@ -1,8 +1,8 @@
 //
 //  Persistence.swift
-//  to•day
+//  to-day
 //
-//  Created by Garrison Blair on 2020-10-13.
+//  Created by Garrison Blair on 2020-10-05.
 //
 
 import CoreData
@@ -13,9 +13,13 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for _ in 0..<5 {
+            let newItem = ToDoItem(context: viewContext)
+            newItem.id = UUID()
+            newItem.date = Date()
+            newItem.name = "Do dishes"
+            newItem.position = 0
+            newItem.icon = "📞"
         }
         do {
             try viewContext.save()

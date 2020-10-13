@@ -1,8 +1,8 @@
 //
 //  to_dayApp.swift
-//  to•day
+//  to-day
 //
-//  Created by Garrison Blair on 2020-10-13.
+//  Created by Garrison Blair on 2020-10-05.
 //
 
 import SwiftUI
